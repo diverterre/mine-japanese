@@ -1,0 +1,5077 @@
+<!DOCTYPE html>
+
+<html lang="th">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<meta name="theme-color" content="#fff8ef">
+
+<title>Hana Japanese</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Itim&family=Mali:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+
+    --cream:#fff8ef;
+
+    --paper:#fffdf8;
+
+    --pink:#f5b7c7;
+
+    --pink2:#f9d8df;
+
+    --blue:#a9d8e8;
+
+    --blue2:#dff3f8;
+
+    --green:#b9d9bd;
+
+    --green2:#e6f3e5;
+
+    --yellow:#f5dda0;
+
+    --yellow2:#fff5d6;
+
+    --brown:#795f58;
+
+    --ink:#4f4542;
+
+    --muted:#a3948e;
+
+    --red:#d96d78;
+
+    --line:#eadbd1;
+
+    --shadow:0 10px 28px rgba(100,75,65,.10);
+
+    --radius:24px;
+
+}
+
+*{
+
+    box-sizing:border-box;
+
+    -webkit-tap-highlight-color:transparent;
+
+}
+
+html,body{
+
+    margin:0;
+
+    padding:0;
+
+    width:100%;
+
+    min-height:100%;
+
+    background:var(--cream);
+
+    color:var(--ink);
+
+    font-family:"Mali","Quicksand",sans-serif;
+
+}
+
+body{
+
+    overflow-x:hidden;
+
+}
+
+button,
+
+input{
+
+    font:inherit;
+
+}
+
+button{
+
+    border:0;
+
+    cursor:pointer;
+
+}
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+.app{
+
+    width:100%;
+
+    max-width:900px;
+
+    min-height:100vh;
+
+    margin:auto;
+
+    position:relative;
+
+    padding-bottom:90px;
+
+}
+
+.screen{
+
+    display:none;
+
+    min-height:calc(100vh - 90px);
+
+    padding:24px 18px 30px;
+
+    animation:screenIn .3s ease;
+
+}
+
+.screen.active{
+
+    display:block;
+
+}
+
+@keyframes screenIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(10px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* decorative paper */
+
+.paper{
+
+    background:var(--paper);
+
+    border:2px solid var(--line);
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+}
+
+.top-decoration{
+
+    position:absolute;
+
+    pointer-events:none;
+
+    opacity:.65;
+
+}
+
+.dot{
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    background:var(--pink);
+
+}
+
+.dot.blue{
+
+    background:var(--blue);
+
+}
+
+.dot.green{
+
+    background:var(--green);
+
+}
+
+.dot.yellow{
+
+    background:var(--yellow);
+
+}
+
+.header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:22px;
+
+}
+
+.header h1{
+
+    font-family:"Itim",sans-serif;
+
+    font-size:34px;
+
+    line-height:1;
+
+    margin:0;
+
+    color:#66534d;
+
+}
+
+.header p{
+
+    margin:6px 0 0;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+}
+
+.icon-btn{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:16px;
+
+    background:white;
+
+    border:2px solid var(--line);
+
+    color:var(--brown);
+
+    font-size:20px;
+
+}
+
+.brand{
+
+    text-align:center;
+
+    padding:32px 20px 25px;
+
+    margin-bottom:18px;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.brand::before,
+
+.brand::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:100px;
+
+    height:25px;
+
+    border-radius:50%;
+
+    background:var(--pink2);
+
+    opacity:.65;
+
+    transform:rotate(-12deg);
+
+}
+
+.brand::before{
+
+    left:-35px;
+
+    top:20px;
+
+}
+
+.brand::after{
+
+    right:-35px;
+
+    bottom:20px;
+
+    background:var(--blue2);
+
+    transform:rotate(12deg);
+
+}
+
+.brand h2{
+
+    position:relative;
+
+    z-index:1;
+
+    margin:0;
+
+    font-family:"Itim",sans-serif;
+
+    font-size:50px;
+
+    color:#6c5750;
+
+}
+
+.brand .jp{
+
+    position:relative;
+
+    z-index:1;
+
+    font-size:28px;
+
+    margin:8px 0;
+
+}
+
+.brand p{
+
+    position:relative;
+
+    z-index:1;
+
+    margin:0;
+
+    color:var(--muted);
+
+}
+
+.progress-card{
+
+    padding:20px;
+
+    margin-bottom:18px;
+
+}
+
+.progress-head{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:10px;
+
+}
+
+.progress-head strong{
+
+    font-size:16px;
+
+}
+
+.progress-head span{
+
+    font-size:13px;
+
+    color:var(--muted);
+
+}
+
+.progress-track{
+
+    width:100%;
+
+    height:13px;
+
+    background:#f2e9e3;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    height:100%;
+
+    width:0%;
+
+    border-radius:20px;
+
+    background:linear-gradient(90deg,var(--pink),var(--blue));
+
+    transition:.4s;
+
+}
+
+/* home */
+
+.welcome{
+
+    padding:22px;
+
+    margin-bottom:18px;
+
+}
+
+.welcome h3{
+
+    margin:0 0 7px;
+
+    font-size:20px;
+
+}
+
+.welcome p{
+
+    margin:0;
+
+    color:var(--muted);
+
+    line-height:1.7;
+
+    font-size:14px;
+
+}
+
+.home-buttons{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:14px;
+
+}
+
+.home-card{
+
+    min-height:145px;
+
+    border:2px solid var(--line);
+
+    border-radius:24px;
+
+    padding:18px;
+
+    text-align:left;
+
+    box-shadow:var(--shadow);
+
+    background:white;
+
+    transition:.2s;
+
+}
+
+.home-card:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.home-card .shape{
+
+    width:52px;
+
+    height:52px;
+
+    border-radius:18px;
+
+    margin-bottom:13px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-family:"Itim";
+
+    font-size:27px;
+
+}
+
+.home-card:nth-child(1) .shape{
+
+    background:var(--pink2);
+
+}
+
+.home-card:nth-child(2) .shape{
+
+    background:var(--blue2);
+
+}
+
+.home-card:nth-child(3) .shape{
+
+    background:var(--green2);
+
+}
+
+.home-card:nth-child(4) .shape{
+
+    background:var(--yellow2);
+
+}
+
+.home-card h3{
+
+    margin:0 0 5px;
+
+    font-size:17px;
+
+}
+
+.home-card p{
+
+    margin:0;
+
+    color:var(--muted);
+
+    font-size:12px;
+
+    line-height:1.5;
+
+}
+
+/* category */
+
+.category-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:14px;
+
+}
+
+.category{
+
+    padding:22px;
+
+    min-height:145px;
+
+    border:2px solid var(--line);
+
+    border-radius:24px;
+
+    background:white;
+
+    text-align:left;
+
+    box-shadow:var(--shadow);
+
+}
+
+.category h3{
+
+    margin:13px 0 5px;
+
+    font-size:18px;
+
+}
+
+.category p{
+
+    margin:0;
+
+    font-size:12px;
+
+    color:var(--muted);
+
+    line-height:1.5;
+
+}
+
+.category .cat-mark{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:17px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-family:"Itim";
+
+    font-size:25px;
+
+}
+
+.cat-hira .cat-mark{
+
+    background:var(--pink2);
+
+}
+
+.cat-kata .cat-mark{
+
+    background:var(--blue2);
+
+}
+
+.cat-vocab .cat-mark{
+
+    background:var(--green2);
+
+}
+
+.cat-grammar .cat-mark{
+
+    background:var(--yellow2);
+
+}
+
+.cat-writing .cat-mark{
+
+    background:#eadcf5;
+
+}
+
+.cat-quiz .cat-mark{
+
+    background:#f6dfd2;
+
+}
+
+/* course */
+
+.course-toolbar{
+
+    display:flex;
+
+    gap:9px;
+
+    margin-bottom:16px;
+
+}
+
+.search{
+
+    flex:1;
+
+    border:2px solid var(--line);
+
+    border-radius:18px;
+
+    padding:12px 15px;
+
+    background:white;
+
+    outline:none;
+
+    color:var(--ink);
+
+}
+
+.search:focus{
+
+    border-color:var(--pink);
+
+}
+
+.select{
+
+    border:2px solid var(--line);
+
+    border-radius:18px;
+
+    background:white;
+
+    color:var(--ink);
+
+    padding:0 10px;
+
+    outline:none;
+
+}
+
+.lesson-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+.lesson-item{
+
+    width:100%;
+
+    background:white;
+
+    border:2px solid var(--line);
+
+    border-radius:20px;
+
+    padding:14px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    text-align:left;
+
+    box-shadow:0 5px 14px rgba(100,75,65,.06);
+
+}
+
+.lesson-item.locked{
+
+    opacity:.52;
+
+}
+
+.lesson-number{
+
+    flex:none;
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:16px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:var(--pink2);
+
+    font-family:"Itim";
+
+    font-size:20px;
+
+}
+
+.lesson-item:nth-child(3n) .lesson-number{
+
+    background:var(--blue2);
+
+}
+
+.lesson-item:nth-child(3n+1) .lesson-number{
+
+    background:var(--green2);
+
+}
+
+.lesson-info{
+
+    min-width:0;
+
+    flex:1;
+
+}
+
+.lesson-info strong{
+
+    display:block;
+
+    margin-bottom:3px;
+
+    font-size:15px;
+
+}
+
+.lesson-info span{
+
+    display:block;
+
+    font-size:11px;
+
+    color:var(--muted);
+
+}
+
+.lesson-status{
+
+    font-size:17px;
+
+}
+
+.badge{
+
+    display:inline-block;
+
+    padding:4px 9px;
+
+    border-radius:20px;
+
+    font-size:10px;
+
+    background:#f5eee9;
+
+    color:#8b7972;
+
+}
+
+/* lesson */
+
+.lesson-shell{
+
+    max-width:700px;
+
+    margin:auto;
+
+}
+
+.lesson-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:16px;
+
+}
+
+.back-btn{
+
+    background:white;
+
+    border:2px solid var(--line);
+
+    border-radius:15px;
+
+    padding:9px 13px;
+
+    color:var(--brown);
+
+}
+
+.lesson-counter{
+
+    font-size:13px;
+
+    color:var(--muted);
+
+}
+
+.lesson-progress{
+
+    height:8px;
+
+    border-radius:10px;
+
+    background:#eee3dd;
+
+    margin-bottom:18px;
+
+    overflow:hidden;
+
+}
+
+.lesson-progress-fill{
+
+    height:100%;
+
+    background:var(--pink);
+
+    transition:.3s;
+
+}
+
+.lesson-card{
+
+    padding:28px 20px;
+
+    text-align:center;
+
+    min-height:450px;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.lesson-label{
+
+    display:inline-block;
+
+    align-self:center;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    background:var(--pink2);
+
+    font-size:11px;
+
+    margin-bottom:15px;
+
+}
+
+.lesson-title{
+
+    font-family:"Itim";
+
+    font-size:31px;
+
+    margin:0 0 8px;
+
+}
+
+.lesson-japanese{
+
+    font-family:"Mali";
+
+    font-size:55px;
+
+    margin:20px 0 5px;
+
+    color:#574943;
+
+    line-height:1.3;
+
+}
+
+.lesson-reading{
+
+    font-size:17px;
+
+    color:#987b72;
+
+}
+
+.lesson-thai{
+
+    margin:15px auto;
+
+    padding:10px 15px;
+
+    background:#fff6f3;
+
+    border-radius:15px;
+
+    max-width:500px;
+
+    line-height:1.7;
+
+    font-size:14px;
+
+}
+
+.lesson-focus{
+
+    margin:15px 0;
+
+    font-size:14px;
+
+    line-height:1.8;
+
+}
+
+.example-box{
+
+    margin:20px 0;
+
+    padding:20px;
+
+    background:#f8fbf7;
+
+    border:2px dashed #c8dcca;
+
+    border-radius:20px;
+
+}
+
+.example-jp{
+
+    font-size:27px;
+
+    margin-bottom:9px;
+
+}
+
+.example-thai{
+
+    color:var(--muted);
+
+    font-size:13px;
+
+}
+
+.lesson-actions{
+
+    display:flex;
+
+    gap:10px;
+
+    justify-content:center;
+
+    margin-top:auto;
+
+    padding-top:20px;
+
+}
+
+.primary-btn,
+
+.secondary-btn{
+
+    min-height:46px;
+
+    padding:10px 20px;
+
+    border-radius:16px;
+
+    font-weight:600;
+
+}
+
+.primary-btn{
+
+    background:var(--pink);
+
+    color:white;
+
+}
+
+.secondary-btn{
+
+    background:white;
+
+    color:var(--brown);
+
+    border:2px solid var(--line);
+
+}
+
+.listen-btn{
+
+    width:54px;
+
+    height:54px;
+
+    border-radius:50%;
+
+    background:var(--blue2);
+
+    color:#537d89;
+
+    font-size:20px;
+
+    border:2px solid #c5e5ed;
+
+}
+
+/* stroke */
+
+.stroke-area{
+
+    margin:15px auto;
+
+    width:220px;
+
+    height:220px;
+
+    border-radius:25px;
+
+    background:#fff9f5;
+
+    border:2px solid var(--line);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.stroke-character{
+
+    font-size:110px;
+
+    font-family:"Mali";
+
+    color:#9d8980;
+
+}
+
+.stroke-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-family:"Itim";
+
+    font-size:18px;
+
+    color:var(--pink);
+
+    opacity:0;
+
+}
+
+.stroke-overlay.play{
+
+    animation:strokeHint 1.2s ease;
+
+}
+
+@keyframes strokeHint{
+
+    0%{opacity:0;transform:scale(.8)}
+
+    25%{opacity:1;transform:scale(1.05)}
+
+    70%{opacity:1}
+
+    100%{opacity:0;transform:scale(1)}
+
+}
+
+.stroke-steps{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:7px;
+
+    margin:15px 0;
+
+}
+
+.stroke-step{
+
+    padding:6px 10px;
+
+    border-radius:12px;
+
+    background:#f4eee9;
+
+    font-size:11px;
+
+    transition:.2s;
+
+}
+
+.stroke-step.active{
+
+    background:var(--pink2);
+
+    transform:translateY(-3px);
+
+}
+
+/* quiz */
+
+.quiz-question{
+
+    font-size:20px;
+
+    line-height:1.6;
+
+    margin:20px 0;
+
+}
+
+.quiz-options{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    text-align:left;
+
+}
+
+.quiz-option{
+
+    padding:15px;
+
+    background:white;
+
+    border:2px solid var(--line);
+
+    border-radius:17px;
+
+    transition:.2s;
+
+}
+
+.quiz-option.correct{
+
+    background:#e8f5e6;
+
+    border-color:#afd1ad;
+
+}
+
+.quiz-option.wrong{
+
+    background:#fae8e9;
+
+    border-color:#e2b0b5;
+
+}
+
+.quiz-feedback{
+
+    min-height:40px;
+
+    margin-top:15px;
+
+    font-size:13px;
+
+    color:var(--muted);
+
+    line-height:1.6;
+
+}
+
+/* writing */
+
+.trace-wrap{
+
+    margin:15px auto;
+
+    width:280px;
+
+    height:280px;
+
+    position:relative;
+
+}
+
+.trace-canvas{
+
+    width:280px;
+
+    height:280px;
+
+    background:
+
+        linear-gradient(#eee5df 1px,transparent 1px),
+
+        linear-gradient(90deg,#eee5df 1px,transparent 1px),
+
+        #fffdf9;
+
+    background-size:70px 70px;
+
+    border:2px solid var(--line);
+
+    border-radius:25px;
+
+    touch-action:none;
+
+}
+
+.trace-guide{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:150px;
+
+    color:#e6d7d0;
+
+    pointer-events:none;
+
+    font-family:"Mali";
+
+}
+
+.write-tools{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+}
+
+/* practice */
+
+.practice-card{
+
+    padding:20px;
+
+    margin-bottom:14px;
+
+}
+
+.practice-kana{
+
+    font-size:65px;
+
+    text-align:center;
+
+    margin:10px 0;
+
+    font-family:"Mali";
+
+}
+
+.practice-answer{
+
+    display:none;
+
+    text-align:center;
+
+    color:var(--red);
+
+    font-size:17px;
+
+    margin:10px;
+
+}
+
+.practice-answer.show{
+
+    display:block;
+
+}
+
+/* profile */
+
+.profile-card{
+
+    padding:25px;
+
+    text-align:center;
+
+    margin-bottom:16px;
+
+}
+
+.profile-circle{
+
+    width:100px;
+
+    height:100px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:var(--pink2);
+
+    border:5px solid white;
+
+    box-shadow:0 5px 18px rgba(100,75,65,.1);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-family:"Itim";
+
+    font-size:42px;
+
+}
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:10px;
+
+}
+
+.stat{
+
+    padding:17px 8px;
+
+    background:white;
+
+    border:2px solid var(--line);
+
+    border-radius:19px;
+
+}
+
+.stat strong{
+
+    display:block;
+
+    font-family:"Itim";
+
+    font-size:27px;
+
+}
+
+.stat span{
+
+    font-size:10px;
+
+    color:var(--muted);
+
+}
+
+/* menu */
+
+.menu-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+.menu-btn{
+
+    width:100%;
+
+    background:white;
+
+    border:2px solid var(--line);
+
+    border-radius:18px;
+
+    padding:17px;
+
+    text-align:left;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+/* bottom nav */
+
+.bottom-nav{
+
+    position:fixed;
+
+    z-index:100;
+
+    left:50%;
+
+    bottom:10px;
+
+    transform:translateX(-50%);
+
+    width:min(92%,700px);
+
+    height:70px;
+
+    background:rgba(255,253,248,.96);
+
+    border:2px solid var(--line);
+
+    border-radius:25px;
+
+    box-shadow:0 10px 30px rgba(90,65,55,.15);
+
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    padding:5px;
+
+    backdrop-filter:blur(10px);
+
+}
+
+.nav-btn{
+
+    border-radius:19px;
+
+    background:transparent;
+
+    color:#a18d86;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:2px;
+
+    font-size:10px;
+
+}
+
+.nav-btn .nav-icon{
+
+    font-family:"Itim";
+
+    font-size:20px;
+
+}
+
+.nav-btn.active{
+
+    background:var(--pink2);
+
+    color:#765b59;
+
+}
+
+/* toast */
+
+.toast{
+
+    position:fixed;
+
+    z-index:200;
+
+    left:50%;
+
+    bottom:92px;
+
+    transform:translate(-50%,20px);
+
+    background:#5e514d;
+
+    color:white;
+
+    padding:11px 17px;
+
+    border-radius:16px;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.3s;
+
+    font-size:12px;
+
+    max-width:85%;
+
+    text-align:center;
+
+}
+
+.toast.show{
+
+    opacity:1;
+
+    transform:translate(-50%,0);
+
+}
+
+/* completion */
+
+.complete-mark{
+
+    width:100px;
+
+    height:100px;
+
+    margin:20px auto;
+
+    border-radius:50%;
+
+    background:var(--green2);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-family:"Itim";
+
+    font-size:40px;
+
+    color:#6e9870;
+
+}
+
+.complete-title{
+
+    font-family:"Itim";
+
+    font-size:35px;
+
+    margin:10px 0;
+
+}
+
+.complete-text{
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+    font-size:14px;
+
+}
+
+/* responsive */
+
+@media(max-width:560px){
+
+    .screen{
+
+        padding-left:14px;
+
+        padding-right:14px;
+
+    }
+
+    .brand h2{
+
+        font-size:43px;
+
+    }
+
+    .brand .jp{
+
+        font-size:24px;
+
+    }
+
+    .home-buttons,
+
+    .category-grid{
+
+        gap:10px;
+
+    }
+
+    .home-card{
+
+        padding:15px;
+
+        min-height:135px;
+
+    }
+
+    .lesson-card{
+
+        min-height:470px;
+
+        padding:23px 15px;
+
+    }
+
+    .lesson-title{
+
+        font-size:27px;
+
+    }
+
+    .lesson-japanese{
+
+        font-size:48px;
+
+    }
+
+    .trace-wrap,
+
+    .trace-canvas{
+
+        width:260px;
+
+        height:260px;
+
+    }
+
+    .trace-guide{
+
+        font-size:135px;
+
+    }
+
+}
+
+@media(max-width:380px){
+
+    .home-buttons,
+
+    .category-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .stats{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="app">
+
+<!-- HOME -->
+
+<section id="home" class="screen active">
+
+    <div class="brand paper">
+
+        <div class="top-decoration dot" style="top:18px;left:25px;"></div>
+
+        <div class="top-decoration dot blue" style="top:45px;right:35px;"></div>
+
+        <div class="top-decoration dot green" style="bottom:22px;left:55px;"></div>
+
+        <h2>Hana</h2>
+
+        <div class="jp">はな</div>
+
+        <p>Japanese Learning Garden</p>
+
+    </div>
+
+    <div class="welcome paper">
+
+        <h3>ยินดีต้อนรับกลับมา</h3>
+
+        <p>
+
+            เรียนภาษาญี่ปุ่นแบบค่อยเป็นค่อยไป
+
+            ตั้งแต่ตัวอักษร คำศัพท์ ไวยากรณ์
+
+            ไปจนถึงการอ่านและการใช้งานจริง
+
+        </p>
+
+    </div>
+
+    <div class="progress-card paper">
+
+        <div class="progress-head">
+
+            <strong>ความคืบหน้าของฉัน</strong>
+
+            <span id="homeProgressText">0 / 200 บท</span>
+
+        </div>
+
+        <div class="progress-track">
+
+            <div class="progress-fill" id="homeProgress"></div>
+
+        </div>
+
+    </div>
+
+    <div class="home-buttons">
+
+        <button class="home-card" onclick="showScreen('course')">
+
+            <div class="shape">学</div>
+
+            <h3>เรียนต่อ</h3>
+
+            <p>กลับไปยังบทเรียนที่กำลังเรียนอยู่</p>
+
+        </button>
+
+        <button class="home-card" onclick="showScreen('practice')">
+
+            <div class="shape">練</div>
+
+            <h3>ฝึกฝน</h3>
+
+            <p>ฝึกตัวอักษรและทบทวนสิ่งที่เรียน</p>
+
+        </button>
+
+        <button class="home-card" onclick="showScreen('profile')">
+
+            <div class="shape">記</div>
+
+            <h3>ความคืบหน้า</h3>
+
+            <p>ดูจำนวนบทที่เรียนจบแล้ว</p>
+
+        </button>
+
+        <button class="home-card" onclick="showScreen('menu')">
+
+            <div class="shape">目</div>
+
+            <h3>เมนู</h3>
+
+            <p>เลือกหมวดที่อยากเรียน</p>
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- COURSE -->
+
+<section id="course" class="screen">
+
+    <div class="header">
+
+        <div>
+
+            <h1>บทเรียน</h1>
+
+            <p>เส้นทางการเรียนภาษาญี่ปุ่น</p>
+
+        </div>
+
+        <button class="icon-btn" onclick="showScreen('home')">戻</button>
+
+    </div>
+
+    <div class="course-toolbar">
+
+        <input
+
+            id="lessonSearch"
+
+            class="search"
+
+            placeholder="ค้นหาบทเรียน..."
+
+            oninput="renderLessonList()"
+
+        >
+
+        <select id="lessonFilter" class="select" onchange="renderLessonList()">
+
+            <option value="all">ทั้งหมด</option>
+
+            <option value="hiragana">Hiragana</option>
+
+            <option value="katakana">Katakana</option>
+
+            <option value="vocab">Vocabulary</option>
+
+            <option value="grammar">Grammar</option>
+
+            <option value="writing">Writing</option>
+
+            <option value="intermediate">Intermediate</option>
+
+        </select>
+
+    </div>
+
+    <div id="lessonList" class="lesson-list"></div>
+
+</section>
+
+<!-- LEARN -->
+
+<section id="learn" class="screen">
+
+    <div class="lesson-shell">
+
+        <div class="lesson-top">
+
+            <button class="back-btn" onclick="showScreen('course')">
+
+                กลับ
+
+            </button>
+
+            <div class="lesson-counter" id="lessonCounter">
+
+                1 / 200
+
+            </div>
+
+        </div>
+
+        <div class="lesson-progress">
+
+            <div class="lesson-progress-fill" id="lessonProgress"></div>
+
+        </div>
+
+        <div id="lessonContent"></div>
+
+    </div>
+
+</section>
+
+<!-- PRACTICE -->
+
+<section id="practice" class="screen">
+
+    <div class="header">
+
+        <div>
+
+            <h1>ฝึกฝน</h1>
+
+            <p>ทบทวนสิ่งที่เรียนมา</p>
+
+        </div>
+
+    </div>
+
+    <div class="practice-card paper">
+
+        <div style="text-align:center;color:var(--muted);font-size:13px;">
+
+            ฝึกอ่านตัวอักษร
+
+        </div>
+
+        <div id="practiceKana" class="practice-kana">
+
+            あ
+
+        </div>
+
+        <div id="practiceAnswer" class="practice-answer">
+
+            a — อะ
+
+        </div>
+
+        <div style="display:flex;justify-content:center;gap:10px;">
+
+            <button class="secondary-btn" onclick="showPracticeAnswer()">
+
+                ดูคำตอบ
+
+            </button>
+
+            <button class="listen-btn" onclick="speakPractice()">
+
+                ฟัง
+
+            </button>
+
+            <button class="primary-btn" onclick="nextPractice()">
+
+                ข้อต่อไป
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="practice-card paper">
+
+        <h3 style="margin-top:0;">ฝึกเขียน</h3>
+
+        <p style="color:var(--muted);font-size:13px;line-height:1.7;">
+
+            ลองใช้นิ้วหรือ Apple Pencil ลากเขียนตัวอักษรลงในช่อง
+
+        </p>
+
+        <div class="trace-wrap">
+
+            <div id="traceGuide" class="trace-guide">あ</div>
+
+            <canvas id="traceCanvas" class="trace-canvas"></canvas>
+
+        </div>
+
+        <div class="write-tools">
+
+            <button class="secondary-btn" onclick="clearTrace()">
+
+                ล้าง
+
+            </button>
+
+            <button class="primary-btn" onclick="changeTraceCharacter()">
+
+                เปลี่ยนตัว
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PROFILE -->
+
+<section id="profile" class="screen">
+
+    <div class="header">
+
+        <div>
+
+            <h1>ความคืบหน้า</h1>
+
+            <p>ดูการเดินทางของตัวเอง</p>
+
+        </div>
+
+    </div>
+
+    <div class="profile-card paper">
+
+        <div class="profile-circle">
+
+            は
+
+        </div>
+
+        <h2 style="margin:13px 0 5px;">
+
+            Japanese Learner
+
+        </h2>
+
+        <p style="color:var(--muted);font-size:13px;">
+
+            ค่อย ๆ เรียนไปทีละบท
+
+        </p>
+
+    </div>
+
+    <div class="stats">
+
+        <div class="stat">
+
+            <strong id="statCompleted">0</strong>
+
+            <span>บทที่จบ</span>
+
+        </div>
+
+        <div class="stat">
+
+            <strong id="statPercent">0%</strong>
+
+            <span>ความคืบหน้า</span>
+
+        </div>
+
+        <div class="stat">
+
+            <strong id="statRemaining">200</strong>
+
+            <span>บทที่เหลือ</span>
+
+        </div>
+
+    </div>
+
+    <div class="paper" style="padding:20px;margin-top:16px;">
+
+        <h3 style="margin-top:0;">เส้นทางการเรียน</h3>
+
+        <div style="margin:15px 0;">
+
+            <div class="progress-head">
+
+                <strong>Hiragana</strong>
+
+                <span>บท 1–46</span>
+
+            </div>
+
+            <div class="progress-track">
+
+                <div class="progress-fill" id="pHira"></div>
+
+            </div>
+
+        </div>
+
+        <div style="margin:15px 0;">
+
+            <div class="progress-head">
+
+                <strong>Katakana</strong>
+
+                <span>บท 47–92</span>
+
+            </div>
+
+            <div class="progress-track">
+
+                <div class="progress-fill" id="pKata"></div>
+
+            </div>
+
+        </div>
+
+        <div style="margin:15px 0;">
+
+            <div class="progress-head">
+
+                <strong>Vocabulary</strong>
+
+                <span>บท 93–130</span>
+
+            </div>
+
+            <div class="progress-track">
+
+                <div class="progress-fill" id="pVocab"></div>
+
+            </div>
+
+        </div>
+
+        <div style="margin:15px 0;">
+
+            <div class="progress-head">
+
+                <strong>Grammar</strong>
+
+                <span>บท 131–170</span>
+
+            </div>
+
+            <div class="progress-track">
+
+                <div class="progress-fill" id="pGrammar"></div>
+
+            </div>
+
+        </div>
+
+        <div style="margin:15px 0;">
+
+            <div class="progress-head">
+
+                <strong>Intermediate</strong>
+
+                <span>บท 171–200</span>
+
+            </div>
+
+            <div class="progress-track">
+
+                <div class="progress-fill" id="pIntermediate"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- MENU -->
+
+<section id="menu" class="screen">
+
+    <div class="header">
+
+        <div>
+
+            <h1>เมนู</h1>
+
+            <p>เลือกสิ่งที่อยากเรียน</p>
+
+        </div>
+
+    </div>
+
+    <div class="category-grid">
+
+        <button class="category cat-hira" onclick="filterCategory('hiragana')">
+
+            <div class="cat-mark">あ</div>
+
+            <h3>Hiragana</h3>
+
+            <p>ตัวอักษรพื้นฐาน เสียง และการอ่าน</p>
+
+        </button>
+
+        <button class="category cat-kata" onclick="filterCategory('katakana')">
+
+            <div class="cat-mark">ア</div>
+
+            <h3>Katakana</h3>
+
+            <p>ตัวอักษรที่ใช้กับคำต่างประเทศ</p>
+
+        </button>
+
+        <button class="category cat-vocab" onclick="filterCategory('vocab')">
+
+            <div class="cat-mark">言</div>
+
+            <h3>Vocabulary</h3>
+
+            <p>คำศัพท์ที่ใช้ในชีวิตประจำวัน</p>
+
+        </button>
+
+        <button class="category cat-grammar" onclick="filterCategory('grammar')">
+
+            <div class="cat-mark">文</div>
+
+            <h3>Grammar</h3>
+
+            <p>โครงสร้างประโยคและไวยากรณ์</p>
+
+        </button>
+
+        <button class="category cat-writing" onclick="showScreen('practice')">
+
+            <div class="cat-mark">書</div>
+
+            <h3>Writing</h3>
+
+            <p>ฝึกเขียนตัวอักษรด้วยมือ</p>
+
+        </button>
+
+        <button class="category cat-quiz" onclick="startRandomQuiz()">
+
+            <div class="cat-mark">問</div>
+
+            <h3>Quiz</h3>
+
+            <p>สุ่มคำถามจากบทที่เรียนแล้ว</p>
+
+        </button>
+
+    </div>
+
+    <div class="paper" style="padding:22px;margin-top:18px;">
+
+        <h3 style="margin-top:0;">หลักสูตรทั้งหมด</h3>
+
+        <p style="font-size:13px;color:var(--muted);line-height:1.8;">
+
+            หลักสูตรนี้มีทั้งหมด 200 บท
+
+            ตั้งแต่ Hiragana และ Katakana
+
+            ไปจนถึง Grammar ระดับ Intermediate
+
+        </p>
+
+        <button class="primary-btn" onclick="showScreen('course')" style="width:100%;">
+
+            ดูบทเรียนทั้งหมด
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- BOTTOM NAV -->
+
+<nav class="bottom-nav">
+
+    <button class="nav-btn active" data-screen="home" onclick="showScreen('home')">
+
+        <span class="nav-icon">家</span>
+
+        <span>หน้าแรก</span>
+
+    </button>
+
+    <button class="nav-btn" data-screen="course" onclick="showScreen('course')">
+
+        <span class="nav-icon">学</span>
+
+        <span>เรียน</span>
+
+    </button>
+
+    <button class="nav-btn" data-screen="practice" onclick="showScreen('practice')">
+
+        <span class="nav-icon">練</span>
+
+        <span>ฝึก</span>
+
+    </button>
+
+    <button class="nav-btn" data-screen="profile" onclick="showScreen('profile')">
+
+        <span class="nav-icon">記</span>
+
+        <span>สถิติ</span>
+
+    </button>
+
+    <button class="nav-btn" data-screen="menu" onclick="showScreen('menu')">
+
+        <span class="nav-icon">目</span>
+
+        <span>เมนู</span>
+
+    </button>
+
+</nav>
+
+<div id="toast" class="toast"></div>
+
+</div>
+
+<script>
+
+/* =========================================================
+
+   HANA JAPANESE
+
+   200 LESSON COURSE
+
+   ========================================================= */
+
+/* ---------------------------------------------------------
+
+   STORAGE
+
+--------------------------------------------------------- */
+
+const STORAGE_KEY = "hana_japanese_200_v1";
+
+let state = JSON.parse(
+
+    localStorage.getItem(STORAGE_KEY) ||
+
+    '{"completed":[],"current":1}'
+
+);
+
+if(!Array.isArray(state.completed)){
+
+    state.completed = [];
+
+}
+
+if(!state.current){
+
+    state.current = 1;
+
+}
+
+/* ---------------------------------------------------------
+
+   LESSON DATABASE
+
+--------------------------------------------------------- */
+
+const lessons = [];
+
+/* ---------------------------------------------------------
+
+   HELPERS
+
+--------------------------------------------------------- */
+
+function addLesson(
+
+    id,
+
+    title,
+
+    category,
+
+    level,
+
+    jp,
+
+    reading,
+
+    thai,
+
+    focus,
+
+    example,
+
+    exampleThai,
+
+    question,
+
+    options,
+
+    answer
+
+){
+
+    lessons.push({
+
+        id,
+
+        title,
+
+        category,
+
+        level,
+
+        jp,
+
+        reading,
+
+        thai,
+
+        focus,
+
+        example,
+
+        exampleThai,
+
+        question,
+
+        options,
+
+        answer
+
+    });
+
+}
+
+/* =========================================================
+
+   HIRAGANA 1–46
+
+   ========================================================= */
+
+const hira = [
+
+    ["あ","a","อะ"],
+
+    ["い","i","อิ"],
+
+    ["う","u","อุ"],
+
+    ["え","e","เอะ"],
+
+    ["お","o","โอะ"],
+
+    ["か","ka","คะ"],
+
+    ["き","ki","คิ"],
+
+    ["く","ku","คุ"],
+
+    ["け","ke","เคะ"],
+
+    ["こ","ko","โคะ"],
+
+    ["さ","sa","สะ"],
+
+    ["し","shi","ชิ"],
+
+    ["す","su","สุ"],
+
+    ["せ","se","เสะ"],
+
+    ["そ","so","โสะ"],
+
+    ["た","ta","ทะ"],
+
+    ["ち","chi","จิ"],
+
+    ["つ","tsu","สึ"],
+
+    ["て","te","เทะ"],
+
+    ["と","to","โทะ"],
+
+    ["な","na","นะ"],
+
+    ["に","ni","นิ"],
+
+    ["ぬ","nu","นุ"],
+
+    ["ね","ne","เนะ"],
+
+    ["の","no","โนะ"],
+
+    ["は","ha","ฮะ"],
+
+    ["ひ","hi","ฮิ"],
+
+    ["ふ","fu","ฟุ"],
+
+    ["へ","he","เฮะ"],
+
+    ["ほ","ho","โฮะ"],
+
+    ["ま","ma","มะ"],
+
+    ["み","mi","มิ"],
+
+    ["む","mu","มุ"],
+
+    ["め","me","เมะ"],
+
+    ["も","mo","โมะ"],
+
+    ["や","ya","ยะ"],
+
+    ["ゆ","yu","ยุ"],
+
+    ["よ","yo","โยะ"],
+
+    ["ら","ra","ระ"],
+
+    ["り","ri","ริ"],
+
+    ["る","ru","รุ"],
+
+    ["れ","re","เร"],
+
+    ["ろ","ro","โระ"],
+
+    ["わ","wa","วะ"],
+
+    ["を","wo","โอะ"],
+
+    ["ん","n","ง/น"]
+
+];
+
+hira.forEach((x,i)=>{
+
+    const id = i+1;
+
+    addLesson(
+
+        id,
+
+        "Hiragana: " + x[0],
+
+        "hiragana",
+
+        "Beginner",
+
+        x[0],
+
+        x[1],
+
+        x[2],
+
+        "รู้จักตัวอักษร " + x[0] + " และเสียงพื้นฐาน",
+
+        x[0] + " は ひらがな です。",
+
+        "นี่คือตัวอักษรฮิรางานะ " + x[0],
+
+        "ตัวไหนอ่านว่า " + x[1] + "?",
+
+        [
+
+            x[0],
+
+            hira[(i+1)%hira.length][0],
+
+            hira[(i+2)%hira.length][0]
+
+        ],
+
+        0
+
+    );
+
+});
+
+/* =========================================================
+
+   KATAKANA 47–92
+
+   ========================================================= */
+
+const kata = [
+
+    ["ア","a","อะ"],
+
+    ["イ","i","อิ"],
+
+    ["ウ","u","อุ"],
+
+    ["エ","e","เอะ"],
+
+    ["オ","o","โอะ"],
+
+    ["カ","ka","คะ"],
+
+    ["キ","ki","คิ"],
+
+    ["ク","ku","คุ"],
+
+    ["ケ","ke","เคะ"],
+
+    ["コ","ko","โคะ"],
+
+    ["サ","sa","สะ"],
+
+    ["シ","shi","ชิ"],
+
+    ["ス","su","สุ"],
+
+    ["セ","se","เสะ"],
+
+    ["ソ","so","โสะ"],
+
+    ["タ","ta","ทะ"],
+
+    ["チ","chi","จิ"],
+
+    ["ツ","tsu","สึ"],
+
+    ["テ","te","เทะ"],
+
+    ["ト","to","โทะ"],
+
+    ["ナ","na","นะ"],
+
+    ["ニ","ni","นิ"],
+
+    ["ヌ","nu","นุ"],
+
+    ["ネ","ne","เนะ"],
+
+    ["ノ","no","โนะ"],
+
+    ["ハ","ha","ฮะ"],
+
+    ["ヒ","hi","ฮิ"],
+
+    ["フ","fu","ฟุ"],
+
+    ["ヘ","he","เฮะ"],
+
+    ["ホ","ho","โฮะ"],
+
+    ["マ","ma","มะ"],
+
+    ["ミ","mi","มิ"],
+
+    ["ム","mu","มุ"],
+
+    ["メ","me","เมะ"],
+
+    ["モ","mo","โมะ"],
+
+    ["ヤ","ya","ยะ"],
+
+    ["ユ","yu","ยุ"],
+
+    ["ヨ","yo","โยะ"],
+
+    ["ラ","ra","ระ"],
+
+    ["リ","ri","ริ"],
+
+    ["ル","ru","รุ"],
+
+    ["レ","re","เร"],
+
+    ["ロ","ro","โระ"],
+
+    ["ワ","wa","วะ"],
+
+    ["ヲ","wo","โอะ"],
+
+    ["ン","n","ง/น"]
+
+];
+
+kata.forEach((x,i)=>{
+
+    const id = i+47;
+
+    addLesson(
+
+        id,
+
+        "Katakana: " + x[0],
+
+        "katakana",
+
+        "Beginner",
+
+        x[0],
+
+        x[1],
+
+        x[2],
+
+        "รู้จักตัวอักษรคาตาคานะ " + x[0],
+
+        x[0] + " は カタカナ です。",
+
+        "นี่คือตัวอักษรคาตาคานะ " + x[0],
+
+        "ตัวไหนอ่านว่า " + x[1] + "?",
+
+        [
+
+            x[0],
+
+            kata[(i+1)%kata.length][0],
+
+            kata[(i+2)%kata.length][0]
+
+        ],
+
+        0
+
+    );
+
+});
+
+/* =========================================================
+
+   VOCABULARY 93–130
+
+   ========================================================= */
+
+const vocab = [
+
+    ["こんにちは","konnichiwa","สวัสดี","คำทักทาย"],
+
+    ["ありがとう","arigatou","ขอบคุณ","คำขอบคุณ"],
+
+    ["すみません","sumimasen","ขอโทษ / ขอทาง","คำสุภาพ"],
+
+    ["はい","hai","ใช่","คำตอบรับ"],
+
+    ["いいえ","iie","ไม่ใช่","คำตอบปฏิเสธ"],
+
+    ["わたし","watashi","ฉัน","สรรพนาม"],
+
+    ["あなた","anata","คุณ","สรรพนาม"],
+
+    ["ともだち","tomodachi","เพื่อน","คน"],
+
+    ["せんせい","sensei","ครู","คน"],
+
+    ["がくせい","gakusei","นักเรียน","คน"],
+
+    ["ほん","hon","หนังสือ","สิ่งของ"],
+
+    ["えんぴつ","enpitsu","ดินสอ","สิ่งของ"],
+
+    ["かばん","kaban","กระเป๋า","สิ่งของ"],
+
+    ["つくえ","tsukue","โต๊ะ","สิ่งของ"],
+
+    ["いす","isu","เก้าอี้","สิ่งของ"],
+
+    ["みず","mizu","น้ำ","อาหารและเครื่องดื่ม"],
+
+    ["ごはん","gohan","ข้าว / อาหาร","อาหาร"],
+
+    ["パン","pan","ขนมปัง","อาหาร"],
+
+    ["りんご","ringo","แอปเปิล","อาหาร"],
+
+    ["おちゃ","ocha","ชา","เครื่องดื่ม"],
+
+    ["いえ","ie","บ้าน","สถานที่"],
+
+    ["がっこう","gakkou","โรงเรียน","สถานที่"],
+
+    ["えき","eki","สถานี","สถานที่"],
+
+    ["みせ","mise","ร้านค้า","สถานที่"],
+
+    ["びょういん","byouin","โรงพยาบาล","สถานที่"],
+
+    ["あさ","asa","ตอนเช้า","เวลา"],
+
+    ["ひる","hiru","ตอนกลางวัน","เวลา"],
+
+    ["よる","yoru","ตอนกลางคืน","เวลา"],
+
+    ["きょう","kyou","วันนี้","เวลา"],
+
+    ["あした","ashita","พรุ่งนี้","เวลา"],
+
+    ["たべる","taberu","กิน","กริยา"],
+
+    ["のむ","nomu","ดื่ม","กริยา"],
+
+    ["みる","miru","ดู","กริยา"],
+
+    ["きく","kiku","ฟัง / ถาม","กริยา"],
+
+    ["よむ","yomu","อ่าน","กริยา"],
+
+    ["かく","kaku","เขียน","กริยา"],
+
+    ["いく","iku","ไป","กริยา"],
+
+    ["くる","kuru","มา","กริยา"],
+
+    ["する","suru","ทำ","กริยา"]
+
+];
+
+vocab.forEach((x,i)=>{
+
+    const id = i+93;
+
+    addLesson(
+
+        id,
+
+        "คำศัพท์: " + x[0],
+
+        "vocab",
+
+        "Beginner",
+
+        x[0],
+
+        x[1],
+
+        x[2],
+
+        x[3] + " — เรียนรู้ความหมายและการใช้งาน",
+
+        "これは " + x[0] + " です。",
+
+        "นี่คือ " + x[2],
+
+        "คำว่า " + x[0] + " หมายถึงอะไร?",
+
+        [
+
+            x[2],
+
+            vocab[(i+1)%vocab.length][2],
+
+            vocab[(i+2)%vocab.length][2]
+
+        ],
+
+        0
+
+    );
+
+});
+
+/* =========================================================
+
+   GRAMMAR 131–170
+
+   ========================================================= */
+
+const grammar = [
+
+    ["です","desu","เป็น / คือ","これは ほん です。","นี่คือหนังสือ"],
+
+    ["は","wa","หัวข้อของประโยค","わたしは がくせいです。","ฉันเป็นนักเรียน"],
+
+    ["も","mo","ก็ / ด้วย","わたしも がくせいです。","ฉันก็เป็นนักเรียน"],
+
+    ["の","no","ของ / แสดงความสัมพันธ์","わたしの ほんです。","เป็นหนังสือของฉัน"],
+
+    ["か","ka","ทำให้เป็นคำถาม","これは ほんですか。","นี่คือหนังสือใช่ไหม"],
+
+    ["これ","kore","สิ่งนี้","これは みずです。","นี่คือน้ำ"],
+
+    ["それ","sore","สิ่งนั้น","それは かばんです。","นั่นคือกระเป๋า"],
+
+    ["あれ","are","สิ่งโน้น","あれは がっこうです。","โน่นคือโรงเรียน"],
+
+    ["この","kono","นี้...","この ほんは おもしろいです。","หนังสือเล่มนี้น่าสนใจ"],
+
+    ["その","sono","นั้น...","その かばんは かわいいです。","กระเป๋าใบนั้นน่ารัก"],
+
+    ["あの","ano","โน้น...","あの ひとは せんせいです。","คนนั้นคือครู"],
+
+    ["ここ","koko","ที่นี่","ここは がっこうです。","ที่นี่คือโรงเรียน"],
+
+    ["そこ","soko","ที่นั่น","そこは えきです。","ที่นั่นคือสถานี"],
+
+    ["あそこ","asoko","ที่โน่น","あそこは みせです。","ที่โน่นคือร้าน"],
+
+    ["を","o","กรรมของกริยา","みずを のみます。","ดื่มน้ำ"],
+
+    ["に","ni","เวลา / จุดหมาย / ตำแหน่ง","がっこうに いきます。","ไปโรงเรียน"],
+
+    ["で","de","สถานที่ที่เกิดการกระทำ","がっこうで べんきょうします。","เรียนที่โรงเรียน"],
+
+    ["へ","e","ไปยัง","にほんへ いきます。","ไปญี่ปุ่น"],
+
+    ["と","to","กับ / และ","ともだちと いきます。","ไปกับเพื่อน"],
+
+    ["から","kara","จาก / เพราะ","タイから きました。","มาจากประเทศไทย"],
+
+    ["まで","made","ถึง / จนถึง","5じまで べんきょうします。","เรียนจนถึงห้าโมง"],
+
+    ["あります","arimasu","มี / อยู่ สำหรับสิ่งไม่มีชีวิต","つくえが あります。","มีโต๊ะอยู่"],
+
+    ["います","imasu","มี / อยู่ สำหรับคนและสัตว์","ねこが います。","มีแมวอยู่"],
+
+    ["おおきい","ookii","ใหญ่","おおきい いえです。","เป็นบ้านหลังใหญ่"],
+
+    ["ちいさい","chiisai","เล็ก","ちいさい いぬです。","เป็นสุนัขตัวเล็ก"],
+
+    ["あたらしい","atarashii","ใหม่","あたらしい ほんです。","เป็นหนังสือใหม่"],
+
+    ["ふるい","furui","เก่า","ふるい いえです。","เป็นบ้านเก่า"],
+
+    ["すき","suki","ชอบ","りんごが すきです。","ชอบแอปเปิล"],
+
+    ["きらい","kirai","ไม่ชอบ","さかなが きらいです。","ไม่ชอบปลา"],
+
+    ["じょうず","jouzu","เก่ง","にほんごが じょうずです。","เก่งภาษาญี่ปุ่น"],
+
+    ["へた","heta","ไม่เก่ง","えが へたです。","วาดรูปไม่เก่ง"],
+
+    ["たいです","tai desu","อยากทำ","にほんへ いきたいです。","อยากไปญี่ปุ่น"],
+
+    ["てください","te kudasai","กรุณา...","みてください。","กรุณาดู"],
+
+    ["てもいいです","te mo ii desu","สามารถ...ได้","ここで たべてもいいです。","กินที่นี่ได้"],
+
+    ["てはいけません","te wa ikemasen","ห้าม...","ここで たべてはいけません。","ห้ามกินที่นี่"],
+
+    ["ませんか","masen ka","...ไหม","いっしょに いきませんか。","ไปด้วยกันไหม"],
+
+    ["ましょう","mashou","มาทำ...กัน","いきましょう。","ไปกันเถอะ"],
+
+    ["から","kara","เพราะว่า","さむいから いきません。","เพราะหนาวจึงไม่ไป"],
+
+    ["けど","kedo","แต่ / แต่ว่า","いきたいですけど、いそがしいです。","อยากไปแต่ยุ่ง"]
+
+];
+
+grammar.forEach((x,i)=>{
+
+    const id = i+131;
+
+    addLesson(
+
+        id,
+
+        "Grammar: " + x[0],
+
+        "grammar",
+
+        "Beginner",
+
+        x[0],
+
+        x[1],
+
+        x[2],
+
+        "โครงสร้าง " + x[0] + " — " + x[2],
+
+        x[3],
+
+        x[4],
+
+        "ข้อใดใช้ " + x[0] + " ได้ถูกต้อง?",
+
+        [
+
+            x[3],
+
+            grammar[(i+1)%grammar.length][3],
+
+            grammar[(i+2)%grammar.length][3]
+
+        ],
+
+        0
+
+    );
+
+});
+
+/* =========================================================
+
+   INTERMEDIATE 171–200
+
+   ========================================================= */
+
+const intermediate = [
+
+    ["て-form","てフォーム","รูป て","たべて","กินแล้ว / เชื่อมกริยา"],
+
+    ["ています","te imasu","กำลัง... / อยู่ในสภาพ","べんきょうしています。","กำลังเรียน"],
+
+    ["のがすきです","no ga suki desu","ชอบการ...","ほんを よむのが すきです。","ชอบอ่านหนังสือ"],
+
+    ["ない-form","ないフォーム","รูปปฏิเสธธรรมดา","たべない","ไม่กิน"],
+
+    ["ないでください","nai de kudasai","กรุณาอย่า...","ここで はなさないでください。","กรุณาอย่าพูดที่นี่"],
+
+    ["なければなりません","nakereba narimasen","ต้อง...","べんきょうしなければなりません。","ต้องเรียน"],
+
+    ["なくてもいいです","nakutemo ii desu","ไม่ต้อง...ก็ได้","いかなくてもいいです。","ไม่ไปก็ได้"],
+
+    ["ないで","naide","โดยไม่...","あさごはんを たべないで きました。","มาโดยไม่ได้กินอาหารเช้า"],
+
+    ["ないといけません","naito ikemasen","ต้อง...","いかな いといけません。","ต้องไป"],
+
+    ["なくて","nakute","ไม่...และ / เพราะไม่...","おかねが なくて こまりました。","ไม่มีเงินจึงลำบาก"],
+
+    ["ないほうがいい","nai hou ga ii","ไม่ควร...","たべないほうがいいです。","ไม่ควรกิน"],
+
+    ["ほうがいい","hou ga ii","ควร...","やすんだほうがいいです。","ควรพัก"],
+
+    ["より","yori","กว่า","ねこより いぬが すきです。","ชอบสุนัขมากกว่าแมว"],
+
+    ["ほうが","hou ga","ฝั่งที่...กว่า","これのほうが いいです。","อันนี้ดีกว่า"],
+
+    ["いちばん","ichiban","ที่สุด","これが いちばん すきです。","ชอบอันนี้ที่สุด"],
+
+    ["たことがあります","ta koto ga arimasu","เคย...","にほんへ いったことがあります。","เคยไปญี่ปุ่น"],
+
+    ["たあとで","ta ato de","หลังจาก...","たべたあとで べんきょうします。","เรียนหลังจากกิน"],
+
+    ["まえに","mae ni","ก่อน...","ねるまえに ほんを よみます。","อ่านหนังสือก่อนนอน"],
+
+    ["つもりです","tsumori desu","ตั้งใจว่าจะ...","らいねん いくつもりです。","ตั้งใจว่าจะไปปีหน้า"],
+
+    ["よていです","yotei desu","มีกำหนดจะ...","あした いくよていです。","มีกำหนดจะไปพรุ่งนี้"],
+
+    ["たいです","tai desu","อยาก...","にほんごを もっと はなしたいです。","อยากพูดภาษาญี่ปุ่นมากขึ้น"],
+
+    ["ほしいです","hoshii desu","ต้องการ / อยากได้","あたらしい ほんが ほしいです。","อยากได้หนังสือใหม่"],
+
+    ["ことができます","koto ga dekimasu","สามารถ...","にほんごを よむことができます。","สามารถอ่านภาษาญี่ปุ่นได้"],
+
+    ["dictionary form","じしょけい","รูปพจนานุกรม","たべる","รูปธรรมดาของกริยา"],
+
+    ["relative clause","れんたいしゅうしょく","ประโยคขยายคำนาม","わたしが よむ ほん","หนังสือที่ฉันอ่าน"],
+
+    ["ので","node","เพราะว่า / เนื่องจาก","さむいので いきません。","เพราะอากาศหนาวจึงไม่ไป"],
+
+    ["そして","soshite","และ / แล้วก็","ごはんを たべました。そして ねました。","กินข้าวแล้วก็นอน"],
+
+    ["でも","demo","แต่","すきです。でも たかいです。","ชอบ แต่แพง"],
+
+    ["だから","dakara","ดังนั้น / เพราะฉะนั้น","あめです。だから いきません。","ฝนตก ดังนั้นจึงไม่ไป"],
+
+    ["あげます・もらいます・くれます","ageru morau kureru","ให้ / ได้รับ","ともだちに ほんを あげました。","ให้หนังสือเพื่อน"]
+
+];
+
+intermediate.forEach((x,i)=>{
+
+    const id = i+171;
+
+    addLesson(
+
+        id,
+
+        "Intermediate: " + x[0],
+
+        "intermediate",
+
+        "Intermediate",
+
+        x[1],
+
+        x[0],
+
+        x[2],
+
+        "ไวยากรณ์ระดับ Intermediate: " + x[0],
+
+        x[3],
+
+        x[4],
+
+        "ความหมายหรือการใช้งานของ " + x[0] + " คืออะไร?",
+
+        [
+
+            x[2],
+
+            intermediate[(i+1)%intermediate.length][2],
+
+            intermediate[(i+2)%intermediate.length][2]
+
+        ],
+
+        0
+
+    );
+
+});
+
+/* ---------------------------------------------------------
+
+   SAFETY CHECK
+
+--------------------------------------------------------- */
+
+console.log("Hana lessons:", lessons.length);
+
+/* ---------------------------------------------------------
+
+   CURRENT LESSON
+
+--------------------------------------------------------- */
+
+let currentLesson = Number(state.current) || 1;
+
+let lessonPage = 0;
+
+let quizAnswered = false;
+
+/* ---------------------------------------------------------
+
+   SAVE
+
+--------------------------------------------------------- */
+
+function saveState(){
+
+    state.current = currentLesson;
+
+    localStorage.setItem(
+
+        STORAGE_KEY,
+
+        JSON.stringify(state)
+
+    );
+
+    updateProgress();
+
+}
+
+/* ---------------------------------------------------------
+
+   COMPLETION
+
+--------------------------------------------------------- */
+
+function isCompleted(id){
+
+    return state.completed.includes(id);
+
+}
+
+function isUnlocked(id){
+
+    if(id === 1) return true;
+
+    return state.completed.includes(id-1);
+
+}
+
+function completeCurrentLesson(){
+
+    if(!state.completed.includes(currentLesson)){
+
+        state.completed.push(currentLesson);
+
+    }
+
+    state.completed.sort((a,b)=>a-b);
+
+    saveState();
+
+    renderLesson();
+
+}
+
+/* ---------------------------------------------------------
+
+   SCREEN
+
+--------------------------------------------------------- */
+
+function showScreen(id){
+
+    document.querySelectorAll(".screen").forEach(
+
+        screen => screen.classList.remove("active")
+
+    );
+
+    const target = document.getElementById(id);
+
+    if(target){
+
+        target.classList.add("active");
+
+    }
+
+    document.querySelectorAll(".nav-btn").forEach(btn=>{
+
+        btn.classList.toggle(
+
+            "active",
+
+            btn.dataset.screen === id
+
+        );
+
+    });
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+    if(id === "course"){
+
+        renderLessonList();
+
+    }
+
+    if(id === "profile"){
+
+        updateProfile();
+
+    }
+
+    if(id === "practice"){
+
+        initPractice();
+
+    }
+
+}
+
+/* ---------------------------------------------------------
+
+   PROGRESS
+
+--------------------------------------------------------- */
+
+function updateProgress(){
+
+    const completed = state.completed.length;
+
+    const percent = Math.round(
+
+        completed / lessons.length * 100
+
+    );
+
+    document.getElementById("homeProgress").style.width =
+
+        percent + "%";
+
+    document.getElementById("homeProgressText").textContent =
+
+        completed + " / " + lessons.length + " บท";
+
+    document.getElementById("statCompleted").textContent =
+
+        completed;
+
+    document.getElementById("statPercent").textContent =
+
+        percent + "%";
+
+    document.getElementById("statRemaining").textContent =
+
+        Math.max(lessons.length-completed,0);
+
+    updateCategoryProgress(
+
+        "pHira",
+
+        1,
+
+        46
+
+    );
+
+    updateCategoryProgress(
+
+        "pKata",
+
+        47,
+
+        92
+
+    );
+
+    updateCategoryProgress(
+
+        "pVocab",
+
+        93,
+
+        130
+
+    );
+
+    updateCategoryProgress(
+
+        "pGrammar",
+
+        131,
+
+        170
+
+    );
+
+    updateCategoryProgress(
+
+        "pIntermediate",
+
+        171,
+
+        200
+
+    );
+
+}
+
+function updateCategoryProgress(elementId,start,end){
+
+    let count = 0;
+
+    for(let i=start;i<=end;i++){
+
+        if(isCompleted(i)){
+
+            count++;
+
+        }
+
+    }
+
+    const percent =
+
+        count/(end-start+1)*100;
+
+    const el =
+
+        document.getElementById(elementId);
+
+    if(el){
+
+        el.style.width = percent+"%";
+
+    }
+
+}
+
+function updateProfile(){
+
+    updateProgress();
+
+}
+
+/* ---------------------------------------------------------
+
+   LESSON LIST
+
+--------------------------------------------------------- */
+
+function renderLessonList(){
+
+    const list =
+
+        document.getElementById("lessonList");
+
+    if(!list) return;
+
+    const search =
+
+        (document.getElementById("lessonSearch")?.value || "")
+
+        .toLowerCase()
+
+        .trim();
+
+    const filter =
+
+        document.getElementById("lessonFilter")?.value || "all";
+
+    list.innerHTML = "";
+
+    const filtered =
+
+        lessons.filter(lesson=>{
+
+            const matchesSearch =
+
+                !search ||
+
+                lesson.title.toLowerCase().includes(search) ||
+
+                lesson.jp.toLowerCase().includes(search) ||
+
+                lesson.reading.toLowerCase().includes(search) ||
+
+                lesson.thai.toLowerCase().includes(search);
+
+            const matchesFilter =
+
+                filter === "all" ||
+
+                lesson.category === filter;
+
+            return matchesSearch && matchesFilter;
+
+        });
+
+    if(filtered.length === 0){
+
+        list.innerHTML = `
+
+            <div class="paper" style="padding:30px;text-align:center;">
+
+                <strong>ไม่พบบทเรียน</strong>
+
+                <p style="color:var(--muted);font-size:13px;">
+
+                    ลองเปลี่ยนคำค้นหาหรือหมวดเรียน
+
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+    filtered.forEach(lesson=>{
+
+        const unlocked =
+
+            isUnlocked(lesson.id);
+
+        const completed =
+
+            isCompleted(lesson.id);
+
+        const button =
+
+            document.createElement("button");
+
+        button.className =
+
+            "lesson-item" +
+
+            (!unlocked ? " locked" : "");
+
+        button.innerHTML = `
+
+            <div class="lesson-number">
+
+                ${lesson.id}
+
+            </div>
+
+            <div class="lesson-info">
+
+                <strong>
+
+                    ${escapeHTML(lesson.title)}
+
+                </strong>
+
+                <span>
+
+                    ${escapeHTML(lesson.thai)}
+
+                </span>
+
+                <span style="margin-top:4px;">
+
+                    <span class="badge">
+
+                        ${lesson.level}
+
+                    </span>
+
+                </span>
+
+            </div>
+
+            <div class="lesson-status">
+
+                ${
+
+                    completed
+
+                    ? "✓"
+
+                    : unlocked
+
+                    ? "›"
+
+                    : "×"
+
+                }
+
+            </div>
+
+        `;
+
+        if(unlocked){
+
+            button.onclick = ()=>{
+
+                openLesson(lesson.id);
+
+            };
+
+        }else{
+
+            button.onclick = ()=>{
+
+                showToast(
+
+                    "เรียนบทก่อนหน้าให้จบก่อน แล้วบทนี้จะปลดล็อก"
+
+                );
+
+            };
+
+        }
+
+        list.appendChild(button);
+
+    });
+
+}
+
+/* ---------------------------------------------------------
+
+   ESCAPE
+
+--------------------------------------------------------- */
+
+function escapeHTML(text){
+
+    return String(text)
+
+        .replaceAll("&","&amp;")
+
+        .replaceAll("<","&lt;")
+
+        .replaceAll(">","&gt;")
+
+        .replaceAll('"',"&quot;")
+
+        .replaceAll("'","&#039;");
+
+}
+
+/* ---------------------------------------------------------
+
+   OPEN LESSON
+
+--------------------------------------------------------- */
+
+function openLesson(id){
+
+    const lesson =
+
+        lessons.find(x=>x.id === id);
+
+    if(!lesson) return;
+
+    if(!isUnlocked(id)){
+
+        showToast(
+
+            "บทนี้ยังล็อกอยู่"
+
+        );
+
+        return;
+
+    }
+
+    currentLesson = id;
+
+    state.current = id;
+
+    lessonPage = 0;
+
+    quizAnswered = false;
+
+    saveState();
+
+    showScreen("learn");
+
+    renderLesson();
+
+}
+
+/* ---------------------------------------------------------
+
+   RENDER LESSON
+
+--------------------------------------------------------- */
+
+function renderLesson(){
+
+    const lesson =
+
+        lessons.find(x=>x.id === currentLesson);
+
+    if(!lesson) return;
+
+    const container =
+
+        document.getElementById("lessonContent");
+
+    document.getElementById("lessonCounter").textContent =
+
+        currentLesson + " / " + lessons.length;
+
+    const progress =
+
+        ((lessonPage+1)/5)*100;
+
+    document.getElementById("lessonProgress").style.width =
+
+        progress + "%";
+
+    /* PAGE 0 */
+
+    if(lessonPage === 0){
+
+        container.innerHTML = `
+
+            <div class="lesson-card paper">
+
+                <div class="lesson-label">
+
+                    ${lesson.level}
+
+                </div>
+
+                <h2 class="lesson-title">
+
+                    ${escapeHTML(lesson.title)}
+
+                </h2>
+
+                <div class="lesson-japanese">
+
+                    ${escapeHTML(lesson.jp)}
+
+                </div>
+
+                <div class="lesson-reading">
+
+                    ${escapeHTML(lesson.reading)}
+
+                </div>
+
+                <div class="lesson-thai">
+
+                    ${escapeHTML(lesson.thai)}
+
+                </div>
+
+                <div class="lesson-actions">
+
+                    <button
+
+                        class="listen-btn"
+
+                        onclick="speakCurrent()"
+
+                    >
+
+                        聞
+
+                    </button>
+
+                    <button
+
+                        class="primary-btn"
+
+                        onclick="nextLessonPage()"
+
+                    >
+
+                        เริ่มบทเรียน
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+    /* PAGE 1 */
+
+    if(lessonPage === 1){
+
+        const isKana =
+
+            lesson.category === "hiragana" ||
+
+            lesson.category === "katakana";
+
+        container.innerHTML = `
+
+            <div class="lesson-card paper">
+
+                <div class="lesson-label">
+
+                    เรียนรู้
+
+                </div>
+
+                <h2 class="lesson-title">
+
+                    ทำความรู้จัก
+
+                </h2>
+
+                ${
+
+                    isKana
+
+                    ? `
+
+                        <div class="stroke-area">
+
+                            <div
+
+                                id="strokeCharacter"
+
+                                class="stroke-character"
+
+                            >
+
+                                ${lesson.jp}
+
+                            </div>
+
+                            <div
+
+                                id="strokeOverlay"
+
+                                class="stroke-overlay"
+
+                            >
+
+                                STROKE
+
+                            </div>
+
+                        </div>
+
+                        <div class="stroke-steps">
+
+                            <span class="stroke-step active">
+
+                                1
+
+                            </span>
+
+                            <span class="stroke-step">
+
+                                2
+
+                            </span>
+
+                            <span class="stroke-step">
+
+                                3
+
+                            </span>
+
+                            <span class="stroke-step">
+
+                                4
+
+                            </span>
+
+                            <span class="stroke-step">
+
+                                5
+
+                            </span>
+
+                        </div>
+
+                        <button
+
+                            class="secondary-btn"
+
+                            onclick="playStroke()"
+
+                        >
+
+                            ดูลำดับการเขียน
+
+                        </button>
+
+                    `
+
+                    :
+
+                    `
+
+                        <div style="
+
+                            font-size:42px;
+
+                            margin:30px 0;
+
+                            color:#8e766e;
+
+                        ">
+
+                            ${lesson.jp}
+
+                        </div>
+
+                    `
+
+                }
+
+                <div class="lesson-focus">
+
+                    <strong>สิ่งที่ต้องจำ</strong>
+
+                    <br>
+
+                    ${escapeHTML(lesson.focus)}
+
+                </div>
+
+                <div class="lesson-actions">
+
+                    <button
+
+                        class="secondary-btn"
+
+                        onclick="previousLessonPage()"
+
+                    >
+
+                        ย้อนกลับ
+
+                    </button>
+
+                    <button
+
+                        class="primary-btn"
+
+                        onclick="nextLessonPage()"
+
+                    >
+
+                        เข้าใจแล้ว
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+    /* PAGE 2 */
+
+    if(lessonPage === 2){
+
+        container.innerHTML = `
+
+            <div class="lesson-card paper">
+
+                <div class="lesson-label">
+
+                    ตัวอย่าง
+
+                </div>
+
+                <h2 class="lesson-title">
+
+                    ลองดูในประโยค
+
+                </h2>
+
+                <div class="example-box">
+
+                    <div class="example-jp">
+
+                        ${escapeHTML(lesson.example)}
+
+                    </div>
+
+                    <div class="example-thai">
+
+                        ${escapeHTML(lesson.exampleThai)}
+
+                    </div>
+
+                </div>
+
+                <button
+
+                    class="listen-btn"
+
+                    onclick="speakText(${JSON.stringify(lesson.example)})"
+
+                    style="margin:auto;"
+
+                >
+
+                    聞
+
+                </button>
+
+                <div class="lesson-focus">
+
+                    ${escapeHTML(lesson.focus)}
+
+                </div>
+
+                <div class="lesson-actions">
+
+                    <button
+
+                        class="secondary-btn"
+
+                        onclick="previousLessonPage()"
+
+                    >
+
+                        ย้อนกลับ
+
+                    </button>
+
+                    <button
+
+                        class="primary-btn"
+
+                        onclick="nextLessonPage()"
+
+                    >
+
+                        ฝึกทำข้อสอบ
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+    /* PAGE 3 */
+
+    if(lessonPage === 3){
+
+        container.innerHTML = `
+
+            <div class="lesson-card paper">
+
+                <div class="lesson-label">
+
+                    Quiz
+
+                </div>
+
+                <h2 class="lesson-title">
+
+                    ลองตอบดู
+
+                </h2>
+
+                <div class="quiz-question">
+
+                    ${escapeHTML(lesson.question)}
+
+                </div>
+
+                <div class="quiz-options">
+
+                    ${lesson.options.map(
+
+                        (option,index)=>`
+
+                        <button
+
+                            class="quiz-option"
+
+                            onclick="answerQuiz(${index})"
+
+                            data-index="${index}"
+
+                        >
+
+                            ${escapeHTML(option)}
+
+                        </button>
+
+                    `).join("")}
+
+                </div>
+
+                <div
+
+                    id="quizFeedback"
+
+                    class="quiz-feedback"
+
+                ></div>
+
+                <div class="lesson-actions">
+
+                    <button
+
+                        class="secondary-btn"
+
+                        onclick="previousLessonPage()"
+
+                    >
+
+                        ย้อนกลับ
+
+                    </button>
+
+                    <button
+
+                        id="quizNext"
+
+                        class="primary-btn"
+
+                        onclick="nextLessonPage()"
+
+                        disabled
+
+                        style="opacity:.5;"
+
+                    >
+
+                        ไปต่อ
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+    /* PAGE 4 */
+
+    if(lessonPage === 4){
+
+        const last =
+
+            currentLesson === lessons.length;
+
+        container.innerHTML = `
+
+            <div class="lesson-card paper">
+
+                <div class="complete-mark">
+
+                    ✓
+
+                </div>
+
+                <div class="complete-title">
+
+                    ${last ? "จบหลักสูตรแล้ว" : "ผ่านบทเรียนแล้ว"}
+
+                </div>
+
+                <div class="complete-text">
+
+                    ${
+
+                        last
+
+                        ?
+
+                        `
+
+                        เก่งมาก
+
+                        คุณเรียนครบทั้ง 200 บทแล้ว
+
+                        <br>
+
+                        ตอนนี้ลองกลับไปทบทวนและฝึกฝนเพิ่มเติมได้เลย
+
+                        `
+
+                        :
+
+                        `
+
+                        คุณผ่านบทที่ ${currentLesson} แล้ว
+
+                        <br>
+
+                        บทถัดไปถูกปลดล็อกแล้ว
+
+                        `
+
+                    }
+
+                </div>
+
+                <div class="lesson-actions">
+
+                    <button
+
+                        class="secondary-btn"
+
+                        onclick="showScreen('course')"
+
+                    >
+
+                        ดูบทเรียน
+
+                    </button>
+
+                    ${
+
+                        !last
+
+                        ?
+
+                        `
+
+                        <button
+
+                            class="primary-btn"
+
+                            onclick="nextLesson()"
+
+                        >
+
+                            บทถัดไป
+
+                        </button>
+
+                        `
+
+                        :
+
+                        `
+
+                        <button
+
+                            class="primary-btn"
+
+                            onclick="showScreen('profile')"
+
+                        >
+
+                            ดูความคืบหน้า
+
+                        </button>
+
+                        `
+
+                    }
+
+                </div>
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+/* ---------------------------------------------------------
+
+   LESSON NAVIGATION
+
+--------------------------------------------------------- */
+
+function nextLessonPage(){
+
+    if(lessonPage < 4){
+
+        if(lessonPage === 3 && !quizAnswered){
+
+            showToast(
+
+                "ตอบคำถามก่อนนะ"
+
+            );
+
+            return;
+
+        }
+
+        lessonPage++;
+
+        renderLesson();
+
+        return;
+
+    }
+
+    completeCurrentLesson();
+
+}
+
+function previousLessonPage(){
+
+    if(lessonPage > 0){
+
+        lessonPage--;
+
+        renderLesson();
+
+    }
+
+}
+
+function nextLesson(){
+
+    if(currentLesson >= lessons.length){
+
+        showScreen("profile");
+
+        return;
+
+    }
+
+    currentLesson++;
+
+    state.current =
+
+        currentLesson;
+
+    lessonPage = 0;
+
+    quizAnswered = false;
+
+    saveState();
+
+    renderLesson();
+
+}
+
+/* ---------------------------------------------------------
+
+   QUIZ
+
+--------------------------------------------------------- */
+
+function answerQuiz(index){
+
+    if(quizAnswered) return;
+
+    const lesson =
+
+        lessons.find(x=>x.id === currentLesson);
+
+    if(!lesson) return;
+
+    const buttons =
+
+        document.querySelectorAll(".quiz-option");
+
+    buttons.forEach(btn=>{
+
+        btn.disabled = true;
+
+    });
+
+    const feedback =
+
+        document.getElementById("quizFeedback");
+
+    if(index === lesson.answer){
+
+        buttons[index].classList.add("correct");
+
+        feedback.textContent =
+
+            "ถูกต้อง เก่งมาก";
+
+        quizAnswered = true;
+
+        const next =
+
+            document.getElementById("quizNext");
+
+        if(next){
+
+            next.disabled = false;
+
+            next.style.opacity = "1";
+
+        }
+
+    }else{
+
+        buttons[index].classList.add("wrong");
+
+        feedback.textContent =
+
+            "ยังไม่ถูก ลองดูคำตอบที่ถูกต้องแล้วเรียนรู้ต่อได้เลย";
+
+        buttons[lesson.answer].classList.add("correct");
+
+        quizAnswered = true;
+
+        const next =
+
+            document.getElementById("quizNext");
+
+        if(next){
+
+            next.disabled = false;
+
+            next.style.opacity = "1";
+
+        }
+
+    }
+
+}
+
+/* ---------------------------------------------------------
+
+   SPEECH
+
+--------------------------------------------------------- */
+
+function speakCurrent(){
+
+    const lesson =
+
+        lessons.find(x=>x.id === currentLesson);
+
+    if(!lesson) return;
+
+    speakText(
+
+        lesson.example ||
+
+        lesson.jp
+
+    );
+
+}
+
+function speakText(text){
+
+    if(!("speechSynthesis" in window)){
+
+        showToast(
+
+            "เบราว์เซอร์นี้ไม่รองรับเสียงพูด"
+
+        );
+
+        return;
+
+    }
+
+    speechSynthesis.cancel();
+
+    const utterance =
+
+        new SpeechSynthesisUtterance(text);
+
+    utterance.lang = "ja-JP";
+
+    utterance.rate = .78;
+
+    utterance.pitch = 1;
+
+    speechSynthesis.speak(
+
+        utterance
+
+    );
+
+}
+
+/* ---------------------------------------------------------
+
+   STROKE ANIMATION
+
+--------------------------------------------------------- */
+
+function playStroke(){
+
+    const overlay =
+
+        document.getElementById("strokeOverlay");
+
+    if(!overlay) return;
+
+    overlay.classList.remove("play");
+
+    void overlay.offsetWidth;
+
+    overlay.classList.add("play");
+
+    const steps =
+
+        document.querySelectorAll(".stroke-step");
+
+    steps.forEach((step,index)=>{
+
+        step.classList.remove("active");
+
+        setTimeout(()=>{
+
+            step.classList.add("active");
+
+        }, index*220);
+
+    });
+
+}
+
+/* ---------------------------------------------------------
+
+   PRACTICE
+
+--------------------------------------------------------- */
+
+const practiceCharacters = [
+
+    ["あ","a","อะ"],
+
+    ["い","i","อิ"],
+
+    ["う","u","อุ"],
+
+    ["え","e","เอะ"],
+
+    ["お","o","โอะ"],
+
+    ["か","ka","คะ"],
+
+    ["き","ki","คิ"],
+
+    ["く","ku","คุ"],
+
+    ["け","ke","เคะ"],
+
+    ["こ","ko","โคะ"],
+
+    ["さ","sa","สะ"],
+
+    ["し","shi","ชิ"],
+
+    ["す","su","สุ"],
+
+    ["せ","se","เสะ"],
+
+    ["そ","so","โสะ"],
+
+    ["た","ta","ทะ"],
+
+    ["ち","chi","จิ"],
+
+    ["つ","tsu","สึ"],
+
+    ["て","te","เทะ"],
+
+    ["と","to","โทะ"],
+
+    ["な","na","นะ"],
+
+    ["に","ni","นิ"],
+
+    ["ぬ","nu","นุ"],
+
+    ["ね","ne","เนะ"],
+
+    ["の","no","โนะ"],
+
+    ["は","ha","ฮะ"],
+
+    ["ひ","hi","ฮิ"],
+
+    ["ふ","fu","ฟุ"],
+
+    ["へ","he","เฮะ"],
+
+    ["ほ","ho","โฮะ"],
+
+    ["ま","ma","มะ"],
+
+    ["み","mi","มิ"],
+
+    ["む","mu","มุ"],
+
+    ["め","me","เมะ"],
+
+    ["も","mo","โมะ"],
+
+    ["や","ya","ยะ"],
+
+    ["ゆ","yu","ยุ"],
+
+    ["よ","yo","โยะ"],
+
+    ["ら","ra","ระ"],
+
+    ["り","ri","ริ"],
+
+    ["る","ru","รุ"],
+
+    ["れ","re","เร"],
+
+    ["ろ","ro","โระ"],
+
+    ["わ","wa","วะ"],
+
+    ["を","wo","โอะ"],
+
+    ["ん","n","ง/น"]
+
+];
+
+let practiceIndex = 0;
+
+function initPractice(){
+
+    const char =
+
+        practiceCharacters[practiceIndex];
+
+    document.getElementById("practiceKana").textContent =
+
+        char[0];
+
+    document.getElementById("practiceAnswer").textContent =
+
+        char[1] + " — " + char[2];
+
+    document.getElementById("practiceAnswer")
+
+        .classList.remove("show");
+
+    document.getElementById("traceGuide").textContent =
+
+        char[0];
+
+    setupCanvas();
+
+}
+
+function showPracticeAnswer(){
+
+    document.getElementById(
+
+        "practiceAnswer"
+
+    ).classList.add("show");
+
+}
+
+function speakPractice(){
+
+    const char =
+
+        practiceCharacters[practiceIndex];
+
+    speakText(char[0]);
+
+}
+
+function nextPractice(){
+
+    practiceIndex++;
+
+    if(
+
+        practiceIndex >=
+
+        practiceCharacters.length
+
+    ){
+
+        practiceIndex = 0;
+
+    }
+
+    initPractice();
+
+}
+
+function changeTraceCharacter(){
+
+    nextPractice();
+
+}
+
+/* ---------------------------------------------------------
+
+   CANVAS TRACING
+
+--------------------------------------------------------- */
+
+let canvas;
+
+let ctx;
+
+let drawing = false;
+
+function setupCanvas(){
+
+    canvas =
+
+        document.getElementById("traceCanvas");
+
+    if(!canvas) return;
+
+    const rect =
+
+        canvas.getBoundingClientRect();
+
+    const ratio =
+
+        window.devicePixelRatio || 1;
+
+    canvas.width =
+
+        rect.width * ratio;
+
+    canvas.height =
+
+        rect.height * ratio;
+
+    ctx =
+
+        canvas.getContext("2d");
+
+    ctx.scale(
+
+        ratio,
+
+        ratio
+
+    );
+
+    ctx.lineCap = "round";
+
+    ctx.lineJoin = "round";
+
+    ctx.lineWidth = 7;
+
+    ctx.strokeStyle = "#d97f8a";
+
+    canvas.onpointerdown = startDrawing;
+
+    canvas.onpointermove = draw;
+
+    canvas.onpointerup = stopDrawing;
+
+    canvas.onpointercancel = stopDrawing;
+
+    canvas.onpointerleave = stopDrawing;
+
+}
+
+function getPointerPosition(e){
+
+    const rect =
+
+        canvas.getBoundingClientRect();
+
+    return {
+
+        x:e.clientX - rect.left,
+
+        y:e.clientY - rect.top
+
+    };
+
+}
+
+function startDrawing(e){
+
+    drawing = true;
+
+    canvas.setPointerCapture?.(
+
+        e.pointerId
+
+    );
+
+    const pos =
+
+        getPointerPosition(e);
+
+    ctx.beginPath();
+
+    ctx.moveTo(
+
+        pos.x,
+
+        pos.y
+
+    );
+
+}
+
+function draw(e){
+
+    if(!drawing) return;
+
+    const pos =
+
+        getPointerPosition(e);
+
+    ctx.lineTo(
+
+        pos.x,
+
+        pos.y
+
+    );
+
+    ctx.stroke();
+
+}
+
+function stopDrawing(){
+
+    drawing = false;
+
+}
+
+function clearTrace(){
+
+    if(!canvas || !ctx) return;
+
+    const rect =
+
+        canvas.getBoundingClientRect();
+
+    ctx.clearRect(
+
+        0,
+
+        0,
+
+        rect.width,
+
+        rect.height
+
+    );
+
+}
+
+/* ---------------------------------------------------------
+
+   CATEGORY
+
+--------------------------------------------------------- */
+
+function filterCategory(category){
+
+    showScreen("course");
+
+    const filter =
+
+        document.getElementById("lessonFilter");
+
+    if(filter){
+
+        filter.value =
+
+            category;
+
+    }
+
+    renderLessonList();
+
+}
+
+/* ---------------------------------------------------------
+
+   RANDOM QUIZ
+
+--------------------------------------------------------- */
+
+function startRandomQuiz(){
+
+    const available =
+
+        lessons.filter(
+
+            lesson =>
+
+            isCompleted(lesson.id)
+
+        );
+
+    if(available.length === 0){
+
+        showToast(
+
+            "เรียนอย่างน้อย 1 บทก่อนเริ่ม Quiz"
+
+        );
+
+        return;
+
+    }
+
+    const random =
+
+        available[
+
+            Math.floor(
+
+                Math.random()*available.length
+
+            )
+
+        ];
+
+    currentLesson =
+
+        random.id;
+
+    lessonPage = 3;
+
+    quizAnswered = false;
+
+    showScreen("learn");
+
+    renderLesson();
+
+}
+
+/* ---------------------------------------------------------
+
+   TOAST
+
+--------------------------------------------------------- */
+
+let toastTimer;
+
+function showToast(message){
+
+    const toast =
+
+        document.getElementById("toast");
+
+    toast.textContent =
+
+        message;
+
+    toast.classList.add("show");
+
+    clearTimeout(toastTimer);
+
+    toastTimer =
+
+        setTimeout(()=>{
+
+            toast.classList.remove("show");
+
+        },2500);
+
+}
+
+/* ---------------------------------------------------------
+
+   INITIALIZATION
+
+--------------------------------------------------------- */
+
+function initialize(){
+
+    updateProgress();
+
+    renderLessonList();
+
+    initPractice();
+
+    console.log(
+
+        "Hana Japanese loaded:",
+
+        lessons.length,
+
+        "lessons"
+
+    );
+
+}
+
+initialize();
+
+/* ---------------------------------------------------------
+
+   KEYBOARD SHORTCUTS
+
+--------------------------------------------------------- */
+
+document.addEventListener(
+
+    "keydown",
+
+    e=>{
+
+        if(
+
+            document
+
+            .getElementById("learn")
+
+            .classList.contains("active")
+
+        ){
+
+            if(e.key === "ArrowRight"){
+
+                nextLessonPage();
+
+            }
+
+            if(e.key === "ArrowLeft"){
+
+                previousLessonPage();
+
+            }
+
+        }
+
+    }
+
+);
+
+/* ---------------------------------------------------------
+
+   RESIZE CANVAS
+
+--------------------------------------------------------- */
+
+window.addEventListener(
+
+    "resize",
+
+    ()=>{
+
+        if(
+
+            document
+
+            .getElementById("practice")
+
+            .classList.contains("active")
+
+        ){
+
+            setupCanvas();
+
+        }
+
+    }
+
+);
+
+</script>
+
+</body>
+
+</html>
